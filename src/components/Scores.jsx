@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Scores(props) {
-    const { courseName, courseResults } = props;
+    const { courseName, courseResults} = props;
   return (
     <div className="scores">
       <h1>{courseName}</h1>
@@ -18,7 +18,10 @@ function Scores(props) {
             <tr key={index}>
               <td>{result.firstName}</td>
               <td>{result.lastName}</td>
-              <td>{result.score}</td>
+              {/* <td className='warning'>{result.score}</td> */}
+             {/* <td className={warning}>{result.score}</td> */}
+             {/* {console.log("score:", result.score)}; */}
+              <td className={result.score < 50 ? 'warning' : ''}>{result.score}</td>
             </tr>
           ))}
         </tbody>
